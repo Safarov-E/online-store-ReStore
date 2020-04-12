@@ -2,8 +2,9 @@ import React from 'react';
 import BookList from '../book-list';
 
 const HomePage = () => {
-    return (
-        <BookList />
-    )
-}
+  return (
+    <BookList />
+  );
+};
+
 export default HomePage;
