@@ -32,7 +32,7 @@ export const bookRemovedFromCart = (bookId) => {
 
 export const allBooksRemovedFromCart = (bookId) => {
     return {
-        type: 'ALL_BOOKs_REMOVED_FROM_CART',
+        type: 'ALL_BOOKS_REMOVED_FROM_CART',
         payload: bookId
     }
 }
