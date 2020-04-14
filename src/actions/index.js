@@ -40,13 +40,20 @@ const booksRequested = () => {
     };
   };
   
-  const fetchBooks = (bookstoreService, dispatch) => () => {
+  const fetchBooksOld = (bookstoreService, dispatch) => () => {
     dispatch(booksRequested());
     bookstoreService.getBooks()
       .then((data) => dispatch(booksLoaded(data)))
       .catch((err) => dispatch(booksError(err)));
   };
-  
-  export {
-    fetchBooks
-  };
+
+const fetchBooks = (bookstoreService) => () => (dispatch) => {
+  dispatch(booksRequested());
+  bookstoreService.getBooks()
+    .then((data) => dispatch(booksLoaded(data)))
+    .catch((err) => dispatch(booksError(err)));
+}
+
+export {
+  fetchBooks
+};
